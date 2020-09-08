@@ -42,12 +42,6 @@ Primeiramente é necessário criar os bancos de dados para conseguir utilizar a 
 ```bash
 # Criando postgres
 $ docker run --name gostack_gobarber -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
-
-# Criando mongo
-$ docker run --name mongodb -p 27017:27017 -d -t mongo
-
-# Criando redis
-$ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 ```
 
 Você pode usar outros nomes e credenciais para os bancos, lembre-se sempre de conferir isso aqui :point_right: [arquivo de configuração do typeorm](https://github.com/gdlopes/gobarber-backend/blob/master/ormconfig.json) e nas [variáveis de ambiente](https://github.com/gdlopes/gobarber-backend/blob/master/.env.example).
