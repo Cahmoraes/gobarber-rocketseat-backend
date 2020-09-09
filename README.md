@@ -27,7 +27,7 @@ O GoBarber é uma aplicação desenvolvida durante o bootcamp da [Rocketseat](ht
 - [multer](https://www.npmjs.com/package/multer)
 - [nodemailer](https://nodemailer.com/about/)
 - [tsyringe](https://github.com/microsoft/tsyringe)
-- [typeorm](https://typeorm.io/#/)
+- [typeorm](https://typeorm.io/#/) 
 
 ## :warning: Pré-requisitos
 
