@@ -43,12 +43,12 @@ describe('ResetPasswordService', () => {
 
     const updatedUser = await fakeUsersRepository.findById(user.id)
 
-    expect(generateHash).toHaveBeenCalledWith('123123')
-    expect(updatedUser?.password).toBe('123123')
+    await expect(generateHash).toHaveBeenCalledWith('123123')
+    await expect(updatedUser?.password).toBe('123123')
   })
 
   it('should not be able to reset the password with non-existing token', async () => {
-    expect(
+    await expect(
       resetPasswordService.execute({
         token: 'non-existing token',
         password: '123456'
@@ -59,7 +59,7 @@ describe('ResetPasswordService', () => {
   it('should not be able to reset the password with non-existing user', async () => {
     const { token } = await fakeUserTokensRepository.generate('non-existing-user')
 
-    expect(
+    await expect(
       resetPasswordService.execute({
         token,
         password: '123456'
@@ -82,12 +82,10 @@ describe('ResetPasswordService', () => {
       return customDate.setHours(customDate.getHours() + 3)
     })
 
-
     await expect(resetPasswordService.execute({
       password: '123123',
       token
     })).rejects.toBeInstanceOf(AppError)
-
 
   })
 
